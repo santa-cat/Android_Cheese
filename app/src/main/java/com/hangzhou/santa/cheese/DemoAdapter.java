@@ -11,8 +11,9 @@ public class DemoAdapter extends CheeseAdapter<Object> {
 
     @Override
     protected void setBinds() {
-        bind(new DemoLikeView(this), DemoLikePresenter.class);
-        bind(new DemoLikeView2(this), DemoLikePresenter.class);
+        bind(new DemoLikeView(this), LikePresenterImpl.class);
+//        bind(new DemoLikeView(this), DemoLikePresenter.class);
+//        bind(new DemoLikeView2(this), DemoLikePresenter.class);
 //        bind(new DemoLikeView(this), DemoLikePresenter2.class);
     }
 }

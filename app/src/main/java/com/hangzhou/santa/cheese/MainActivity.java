@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
 
         mList.add(new LikeIn(1));
-        mList.add(new LikeIn(2));
+//        mList.add(new LikeIn(2));
 
         DemoAdapter demoAdapter = new DemoAdapter();
         demoAdapter.mItems = mList;

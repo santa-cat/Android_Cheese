@@ -3,25 +3,27 @@ package com.hangzhou.santa.cheese.cheese.core;
 /**
  * Created by santa on 2019/3/11.
  */
-public abstract class AbsCheeseView {
+public abstract class AbsCheeseView<P> {
 
-    private AbsCheesePresenter mPresenter;
+    protected P mPresenter;
 
-    protected void setPresenter(AbsCheesePresenter presenter) {
+    public void setPresenter(P presenter) {
         mPresenter = presenter;
     }
 
     public void dispatch(CheeseAction action) {
-        if (null != mPresenter) {
-            mPresenter.onAction(action);
+        if (null != mPresenter && mPresenter instanceof AbsCheesePresenter) {
+            ((AbsCheesePresenter)mPresenter).onAction(action);
+        } else {
+            throw new IllegalArgumentException("AbsCheeseView: if use dispatch view need extend AbsCheesePresenter!");
         }
     }
 
     public <OUT> OUT dispatch(CheeseAction action, Class<OUT> clazz) {
-        if (null != mPresenter) {
-            return mPresenter.onAction(action, clazz);
+        if (null != mPresenter && mPresenter instanceof AbsCheesePresenter) {
+            return ((AbsCheesePresenter)mPresenter).onAction(action, clazz);
         } else {
-            return null;
+            throw new IllegalArgumentException("AbsCheeseView: if use dispatch view need extend AbsCheesePresenter!");
         }
     }
 

@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by santa on 2019/3/11.
  */
-public abstract class AbsCheeseAdapterView<T>  extends AbsCheeseView {
+public abstract class AbsCheeseAdapterView<P, T>  extends AbsCheeseView<P> {
     private RecyclerView.Adapter adapter;
 
 

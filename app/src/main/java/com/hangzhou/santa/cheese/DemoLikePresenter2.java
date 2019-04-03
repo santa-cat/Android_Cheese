@@ -1,12 +1,12 @@
 package com.hangzhou.santa.cheese;
 
-import com.hangzhou.santa.cheese.cheese.core.AbsCheesePresenter;
+import com.hangzhou.santa.cheese.cheese.core.IActionCheesePresenter;
 import com.hangzhou.santa.cheese.cheese.core.CheeseAction;
 
 /**
  * Created by santa on 2019/3/11.
  */
-public class DemoLikePresenter2 extends AbsCheesePresenter {
+public class DemoLikePresenter2 implements IActionCheesePresenter {
     @Override
     public void onAction(CheeseAction action) {
         if (action.getType() == DemoActions.LIKE) {

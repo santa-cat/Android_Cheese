@@ -2,13 +2,8 @@ package com.hangzhou.santa.cheese.cheese.extension;
 
 import android.support.annotation.NonNull;
 import android.util.SparseArray;
-import android.view.View;
 
-import com.hangzhou.santa.cheese.cheese.core.AbsCheesePresenter;
 import com.hangzhou.santa.cheese.cheese.core.AbsCheeseView;
-import com.hangzhou.santa.cheese.cheese.core.CheeseAction;
-
-import java.util.HashMap;
 
 /**
  * Created by santa on 2019/3/13.

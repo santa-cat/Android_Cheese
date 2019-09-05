@@ -4,15 +4,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.hangzhou.santa.cheese.DemoActions;
-import com.hangzhou.santa.cheese.DemoLikePresenter;
 import com.hangzhou.santa.cheese.ILikePresenter;
 import com.hangzhou.santa.cheese.LikeIn;
-import com.hangzhou.santa.cheese.LikeOut;
 import com.hangzhou.santa.cheese.R;
-import com.hangzhou.santa.cheese.cheese.core.AbsCheeseView;
-import com.hangzhou.santa.cheese.cheese.core.CheeseActionListener;
-import com.hangzhou.santa.cheese.cheese.extension.CheeseWapper;
+import com.hangzhou.santa.library.cheese.core.AbsCheeseView;
+import com.hangzhou.santa.library.cheese.core.CheeseActionListener;
+import com.hangzhou.santa.library.cheese.extension.CheeseWapper;
 
 /**
  * Created by santa on 2019/3/13.

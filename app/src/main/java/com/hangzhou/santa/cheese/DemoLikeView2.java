@@ -1,8 +1,5 @@
 package com.hangzhou.santa.cheese;
 
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,8 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.hangzhou.santa.cheese.cheese.core.AbsCheeseAdapterView;
-import com.hangzhou.santa.cheese.cheese.core.CheeseActionListener;
+import com.hangzhou.santa.library.cheese.core.AbsCheeseAdapterView;
+import com.hangzhou.santa.library.cheese.core.CheeseActionListener;
 
 import java.util.List;
 

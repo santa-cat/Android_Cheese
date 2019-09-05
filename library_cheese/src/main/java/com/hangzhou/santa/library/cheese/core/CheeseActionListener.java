@@ -1,4 +1,4 @@
-package com.hangzhou.santa.cheese.cheese.core;
+package com.hangzhou.santa.library.cheese.core;
 
 public interface CheeseActionListener<OUT> {
     void afterAction(OUT o);

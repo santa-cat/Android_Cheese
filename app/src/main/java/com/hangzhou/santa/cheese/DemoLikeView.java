@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.hangzhou.santa.cheese.cheese.core.AbsCheeseAdapterView;
-import com.hangzhou.santa.cheese.cheese.core.CheeseActionListener;
+import com.hangzhou.santa.library.cheese.core.AbsCheeseAdapterView;
+import com.hangzhou.santa.library.cheese.core.CheeseActionListener;
 
 import java.util.List;
 

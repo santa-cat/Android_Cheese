@@ -1,7 +1,7 @@
 package com.hangzhou.santa.cheese;
 
-import com.hangzhou.santa.cheese.cheese.core.CheeseAction;
-import com.hangzhou.santa.cheese.cheese.core.CheeseActionListener;
+import com.hangzhou.santa.library.cheese.core.CheeseAction;
+import com.hangzhou.santa.library.cheese.core.CheeseActionListener;
 
 /**
  * Created by santa on 2019/3/11.

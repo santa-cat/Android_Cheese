@@ -4,10 +4,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import com.hangzhou.santa.cheese.DemoLikePresenter;
 import com.hangzhou.santa.cheese.LikePresenterImpl;
 import com.hangzhou.santa.cheese.R;
-import com.hangzhou.santa.cheese.cheese.extension.CheeseWapper;
+import com.hangzhou.santa.library.cheese.extension.CheeseWapper;
 
 /**
  * Created by santa on 2019/3/13.

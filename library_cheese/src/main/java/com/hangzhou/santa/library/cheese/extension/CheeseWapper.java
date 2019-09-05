@@ -1,8 +1,8 @@
-package com.hangzhou.santa.cheese.cheese.extension;
+package com.hangzhou.santa.library.cheese.extension;
 
 import android.support.annotation.NonNull;
 
-import com.hangzhou.santa.cheese.cheese.core.AbsCheeseView;
+import com.hangzhou.santa.library.cheese.core.AbsCheeseView;
 
 /**
  * Created by santa on 2019/3/13.

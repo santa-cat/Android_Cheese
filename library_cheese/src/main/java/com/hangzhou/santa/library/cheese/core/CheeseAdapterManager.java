@@ -1,4 +1,4 @@
-package com.hangzhou.santa.cheese.cheese.core;
+package com.hangzhou.santa.library.cheese.core;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -11,10 +11,10 @@ import java.util.List;
  * Created by santa on 2019/3/11.
  */
 public class CheeseAdapterManager<T> implements ICheeseManager{
-    private SparseArray<Class<? extends AbsCheesePresenter>> presenterClasses = new SparseArray<>();
-    private SparseArray<AbsCheeseAdapterView<T>> views = new SparseArray<>();
+    private SparseArray<Class<?>> presenterClasses = new SparseArray<>();
+    private SparseArray<AbsCheeseAdapterView> views = new SparseArray<>();
 
-    public void bind(AbsCheeseAdapterView adapterView, Class<? extends AbsCheesePresenter> presenterClass) {
+    public <P> void bind(AbsCheeseAdapterView adapterView, Class<? extends P> presenterClass) {
         if (adapterView == null) {
             throw new IllegalArgumentException("CheeseAdapterManager: adapterView can't be null!");
         }
@@ -24,10 +24,6 @@ public class CheeseAdapterManager<T> implements ICheeseManager{
         if (presenterClass != null) {
             presenterClasses.put(index, presenterClass);
         }
-    }
-
-    public AbsCheeseAdapterView<T> getDelegate(int itemViewType) {
-        return views.get(itemViewType);
     }
 
     public int getItemViewType(@NonNull List<T> items, int position) {
@@ -59,7 +55,7 @@ public class CheeseAdapterManager<T> implements ICheeseManager{
         Class presenterClass = presenterClasses.get(viewType);
         if (presenterClass != null) {
             try {
-                adapterDelegate.setPresenter((AbsCheesePresenter) presenterClass.newInstance());
+                adapterDelegate.setPresenter(presenterClass.newInstance());
             } catch (IllegalAccessException | InstantiationException e) {
                 e.printStackTrace();
                 throw new IllegalArgumentException("CheeseAdapterManager: onCreateViewHolder newInstance fail!");

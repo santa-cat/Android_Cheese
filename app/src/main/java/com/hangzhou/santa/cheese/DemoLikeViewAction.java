@@ -8,7 +8,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.hangzhou.santa.library.cheese.core.AbsCheeseAdapterView;
+
+import com.hangzhou.santa.library.cheese.core.AbsActionCheeseAdapterView;
 import com.hangzhou.santa.library.cheese.core.CheeseActionListener;
 
 import java.util.List;
@@ -16,8 +17,8 @@ import java.util.List;
 /**
  * Created by santa on 2019/3/11.
  */
-public class DemoLikeView extends AbsCheeseAdapterView<ILikePresenter, Object> {
-    public DemoLikeView(RecyclerView.Adapter adapter) {
+public class DemoLikeViewAction extends AbsActionCheeseAdapterView<Object> {
+    public DemoLikeViewAction(RecyclerView.Adapter adapter) {
         super(adapter);
     }
 
@@ -32,8 +33,6 @@ public class DemoLikeView extends AbsCheeseAdapterView<ILikePresenter, Object> {
         if (!(holder instanceof ItemViewHolder && data instanceof LikeIn)){
             return;
         }
-
-        mPresenter.like(1);
 
         ((ItemViewHolder) holder).mButtonLikeAsyn.setOnClickListener(new View.OnClickListener() {
             @Override

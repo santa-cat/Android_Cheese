@@ -1,12 +1,16 @@
 package com.hangzhou.santa.cheese;
 
-import com.hangzhou.santa.library.cheese.core.IActionCheesePresenter;
 import com.hangzhou.santa.library.cheese.core.CheeseAction;
+import com.hangzhou.santa.library.cheese.core.IActionCheesePresenter;
 
 /**
- * Created by santa on 2019/3/11.
+ * Created by santa on 2019/3/28.
  */
-public class DemoLikePresenter implements IActionCheesePresenter {
+public class LikePresenterImpl implements ILikePresenter, IActionCheesePresenter {
+    @Override
+    public void like(int count) {
+
+    }
     @Override
     public void onAction(CheeseAction action) {
         switch (action.getType()) {
@@ -47,5 +51,4 @@ public class DemoLikePresenter implements IActionCheesePresenter {
         LikeIn likeIn = (LikeIn) action.getPayload();
         return (T) new LikeOut(true, 1);
     }
-
 }

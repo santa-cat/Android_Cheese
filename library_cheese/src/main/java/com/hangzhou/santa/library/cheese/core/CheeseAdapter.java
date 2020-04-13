@@ -1,6 +1,5 @@
-package com.hangzhou.santa.cheese.cheese.core;
+package com.hangzhou.santa.library.cheese.core;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
@@ -27,7 +26,7 @@ public abstract class CheeseAdapter<T> extends RecyclerView.Adapter {
 
     protected abstract void setBinds();
 
-    protected CheeseAdapter<T> bind(AbsCheeseAdapterView<T> adapterDelegate, Class<? extends AbsCheesePresenter> presenterClass) {
+    protected <P> CheeseAdapter<T> bind(AbsCheeseAdapterView<P, T> adapterDelegate, Class<? extends P> presenterClass) {
         mAdapterManager.bind(adapterDelegate, presenterClass);
         return this;
     }

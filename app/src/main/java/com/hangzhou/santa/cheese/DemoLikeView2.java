@@ -1,8 +1,5 @@
 package com.hangzhou.santa.cheese;
 
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,15 +8,15 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.hangzhou.santa.cheese.cheese.core.AbsCheeseAdapterView;
-import com.hangzhou.santa.cheese.cheese.core.CheeseActionListener;
+import com.hangzhou.santa.library.cheese.core.AbsCheeseAdapterView;
+import com.hangzhou.santa.library.cheese.core.CheeseActionListener;
 
 import java.util.List;
 
 /**
  * Created by santa on 2019/3/11.
  */
-public class DemoLikeView2 extends AbsCheeseAdapterView<Object> {
+public class DemoLikeView2 extends AbsCheeseAdapterView<ILikePresenter, Object> {
     public DemoLikeView2(RecyclerView.Adapter adapter) {
         super(adapter);
     }
@@ -35,27 +32,27 @@ public class DemoLikeView2 extends AbsCheeseAdapterView<Object> {
         if (!(holder instanceof ItemViewHolder && data instanceof LikeIn)){
             return;
         }
-
-        ((ItemViewHolder) holder).mIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                dispatch(DemoActions.like((LikeIn) data, new CheeseActionListener<LikeOut>() {
-                    @Override
-                    public void afterAction(LikeOut o) {
-                        if (o.response) {
-                            ((LikeIn) data).count += o.count;
-                            ((ItemViewHolder) holder).mTextView.setText(((LikeIn) data).count+"");
-
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                                (((ItemViewHolder) holder).mIcon).setImageTintList(ColorStateList.valueOf(Color.RED));
-                            }
-                            ((ItemViewHolder) holder).mIcon.setOnClickListener(null);
-                        }
-                    }
-                }));
-            }
-        });
+//
+//        ((ItemViewHolder) holder).mIcon.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                dispatch(DemoActions.like((LikeIn) data, new CheeseActionListener<LikeOut>() {
+//                    @Override
+//                    public void afterAction(LikeOut o) {
+//                        if (o.response) {
+//                            ((LikeIn) data).count += o.count;
+//                            ((ItemViewHolder) holder).mTextView.setText(((LikeIn) data).count+"");
+//
+//                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                                (((ItemViewHolder) holder).mIcon).setImageTintList(ColorStateList.valueOf(Color.RED));
+//                            }
+//                            ((ItemViewHolder) holder).mIcon.setOnClickListener(null);
+//                        }
+//                    }
+//                }));
+//            }
+//        });
     }
 
     @Override
